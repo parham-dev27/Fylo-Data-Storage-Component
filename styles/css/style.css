@@ -1,0 +1,129 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+body {
+  background-image: url("../../images/bg-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: hsl(243, 100%, 93%);
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  display: grid;
+  place-content: center;
+}
+@media (min-width: 1028px) {
+  body {
+    background-image: url("../../images/bg-desktop.png");
+    background-size: contain;
+    background-position-y: bottom;
+    background-color: hsl(229, 57%, 11%);
+  }
+}
+
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+@media (min-width: 1028px) {
+  main {
+    flex-direction: row;
+  }
+}
+
+.header {
+  padding: 3rem;
+  background-color: hsl(228, 56%, 26%);
+  width: 86dvw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  gap: 2rem;
+  border-radius: 10px 7rem 10px 10px;
+}
+@media (min-width: 1028px) {
+  .header {
+    width: 35dvw;
+  }
+}
+.header__actions {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+.header__actions--action {
+  all: unset;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: hsl(229, 57%, 11%);
+  display: grid;
+  place-content: center;
+  transition: transform 0.2s ease-in-out;
+}
+.header__actions--action:hover, .header__actions--action:focus-within {
+  background-color: hsl(228, 56%, 26%);
+  outline: 3px solid hsl(229, 57%, 11%);
+  transform: scale(1.1);
+}
+
+.storage__progressbar--progressbar {
+  height: 1.5rem;
+  width: 100%;
+  background-color: hsl(229, 57%, 11%);
+  border-radius: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.storage__progressbar--progressbar__bar {
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  border-radius: 1.5rem;
+  height: calc(1.5rem - 4px);
+  width: 81.5%;
+  background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  transform-origin: center left;
+  animation: slideout 1s ease-in-out;
+}
+.storage__progressbar--progressbar__bar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  background-color: hsl(243, 100%, 93%);
+}
+
+@keyframes slideout {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

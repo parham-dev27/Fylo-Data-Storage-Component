@@ -1,31 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Frontend Mentor | Fylo data storage component" />
+        <meta name="author" content="parham-dev27" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png" />
+        <link rel="stylesheet" href="styles/css/style.css" />
+        <title>Frontend Mentor | Fylo data storage component</title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Fylo data storage component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  You’ve used 815 GB of your storage
-
-  185 GB Left
-  
-  0 GB
-  1000 GB
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <style>
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+            }
+            .attribution a {
+                color: hsl(228, 93%, 89%);
+            }
+        </style>
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+            rel="stylesheet" />
+    </head>
+    <body>
+        <main>
+            <section class="header">
+                <img
+                    src="images/logo.svg"
+                    alt="logo.svg"
+                    aria-label="title"
+                    class="header__title" />
+                <div class="header__actions">
+                    <button class="header__actions--action">
+                        <img
+                            src="images/icon-document.svg"
+                            title="document"
+                            alt="icon-document" />
+                    </button>
+                    <button class="header__actions--action">
+                        <img
+                            src="images/icon-folder.svg"
+                            title="folder"
+                            alt="icon-folder" />
+                    </button>
+                    <button class="header__actions--action">
+                        <img
+                            src="images/icon-upload.svg"
+                            title="upload"
+                            alt="icon-upload" />
+                    </button>
+                </div>
+            </section>
+            <section class="storage">
+                <p>You’ve used 815 GB of your storage</p>
+                <div class="storage__progressbar">
+                    <div class="storage__progressbar--progressbar">
+                        <div
+                            class="storage__progressbar--progressbar__bar"></div>
+                    </div>
+                    <p>
+                        <span class="storage__progressbar--min">0 GB</span>
+                        <span class="storage__progressbar--max">1000 GB</span>
+                    </p>
+                </div>
+                <div class="storage--left">
+                    <p><span class="storage--left--bold">815</span> GB Left</p>
+                </div>
+            </section>
+        </main>
+        <footer class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. <br />
+            Coded by <a href="https://github.com/parham-dev27">parham-dev27</a>.
+        </footer>
+    </body>
 </html>

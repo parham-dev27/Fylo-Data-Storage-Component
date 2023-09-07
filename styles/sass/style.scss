@@ -1,0 +1,105 @@
+@forward "./utils/reset";
+@use "./variables" as var;
+
+body {
+    background-image: url("../../images/bg-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (min-width: 1028px) {
+        background-image: url("../../images/bg-desktop.png");
+        background-size: contain;
+        background-position-y: bottom;
+        background-color: var.$very-dark-blue;
+    }
+    color: var.$pale-blue;
+    font-family: var.$font-family;
+    font-size: var.$font-size;
+    font-weight: map-get(var.$font-weight, "regular");
+
+    display: grid;
+    place-content: center;
+}
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    @media (min-width: 1028px) {
+        flex-direction: row;
+    }
+}
+
+.header {
+    padding: 3rem;
+    background-color: var.$dark-blue;
+    width: 86dvw;
+    @media (min-width: 1028px) {
+        width: 35dvw;
+    }
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    gap: 2rem;
+    border-radius: 10px 7rem 10px 10px;
+    &__actions {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1rem;
+        &--action {
+            all: unset;
+            padding: 12px;
+            border-radius: 10px;
+            background-color: var.$very-dark-blue;
+            display: grid;
+            place-content: center;
+            transition: transform 0.2s ease-in-out;
+            &:hover,
+            &:focus-within {
+                background-color: var.$dark-blue;
+                outline: 3px solid var.$very-dark-blue;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.storage__progressbar--progressbar {
+    height: 1.5rem;
+    width: 100%;
+    background-color: var.$very-dark-blue;
+    border-radius: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    &__bar {
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 0;
+        border-radius: 1.5rem;
+        height: calc(1.5rem - 4px);
+        width: 81.5%;
+        background: var.$gradient;
+        transform-origin: center left;
+        animation: slideout 1s ease-in-out;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            border-radius: 50%;
+            height: 1rem;
+            width: 1rem;
+            background-color: var.$pale-blue;
+        }
+    }
+}
+
+@keyframes slideout {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
