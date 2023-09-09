@@ -8,7 +8,7 @@
       Live
     </a>
     <span> | </span>
-    <a href="#Solution">
+    <a href="https://www.frontendmentor.io/solutions/frontend-mentor-fylo-data-storage-component-by-parhamdev27-5TCL5DHPuH">
       Solution
     </a>
    <span> | </span>
@@ -44,4 +44,4 @@ Another great project to practice CSS. I finally had a better understanding of C
 
 ## Acknowledgments
 
-A big thank you to anyone providing feedback on my <a href="#Solution">solution</a>. It definitely helps to find new ways to code and find easier solutions!
+A big thank you to anyone providing feedback on my <a href="https://www.frontendmentor.io/solutions/frontend-mentor-fylo-data-storage-component-by-parhamdev27-5TCL5DHPuH">solution</a>. It definitely helps to find new ways to code and find easier solutions!
