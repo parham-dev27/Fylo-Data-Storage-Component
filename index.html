@@ -19,6 +19,9 @@
             .attribution {
                 font-size: 11px;
                 text-align: center;
+                position: fixed;
+                bottom: 5px;
+                width: 100%;
             }
             .attribution a {
                 color: hsl(228, 93%, 89%);
@@ -61,19 +64,24 @@
                 </div>
             </section>
             <section class="storage">
-                <p>You’ve used 815 GB of your storage</p>
+                <p class="storage--text">
+                    You’ve used<span class="bold"> 815 GB </span>of your storage
+                </p>
                 <div class="storage__progressbar">
                     <div class="storage__progressbar--progressbar">
                         <div
                             class="storage__progressbar--progressbar__bar"></div>
                     </div>
-                    <p>
+                    <p class="storage__progressbar--hero bold">
                         <span class="storage__progressbar--min">0 GB</span>
                         <span class="storage__progressbar--max">1000 GB</span>
                     </p>
                 </div>
-                <div class="storage--left">
-                    <p><span class="storage--left--bold">815</span> GB Left</p>
+                <div class="storage--left bold">
+                    <p>
+                        <span class="black">185</span
+                        ><span class="small"> GB Left </span>
+                    </p>
                 </div>
             </section>
         </main>

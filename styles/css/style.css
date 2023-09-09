@@ -39,6 +39,14 @@ body {
   }
 }
 
+.bold {
+  font-weight: 700;
+}
+
+.black {
+  color: hsl(229, 57%, 11%);
+}
+
 main {
   display: flex;
   flex-flow: column nowrap;
@@ -63,6 +71,7 @@ main {
 @media (min-width: 1028px) {
   .header {
     width: 35dvw;
+    max-width: 400px;
   }
 }
 .header__actions {
@@ -85,10 +94,13 @@ main {
   transform: scale(1.1);
 }
 
+.storage__progressbar {
+  padding-bottom: 10px;
+}
 .storage__progressbar--progressbar {
   height: 1.5rem;
   width: 100%;
-  background-color: hsl(229, 57%, 11%);
+  background-color: #121a40;
   border-radius: 1.5rem;
   position: relative;
   overflow: hidden;
@@ -96,10 +108,10 @@ main {
 .storage__progressbar--progressbar__bar {
   display: block;
   position: absolute;
-  top: 2px;
-  left: 0;
+  top: 3px;
+  left: 3px;
   border-radius: 1.5rem;
-  height: calc(1.5rem - 4px);
+  height: calc(1.5rem - 6px);
   width: 81.5%;
   background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
   transform-origin: center left;
@@ -112,9 +124,88 @@ main {
   top: 2px;
   right: 2px;
   border-radius: 50%;
-  height: 1rem;
-  width: 1rem;
+  height: calc(1rem - 2px);
+  width: calc(1rem - 2px);
   background-color: hsl(243, 100%, 93%);
+}
+.storage__progressbar--hero {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 0.5rem;
+}
+.storage__progressbar--hero span:nth-child(1) {
+  margin-right: auto;
+}
+
+.storage {
+  padding: 2.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+  background-color: hsl(228, 56%, 26%);
+  position: relative;
+  justify-content: center;
+}
+.storage--text {
+  text-align: center;
+}
+@media (min-width: 1028px) {
+  .storage--text {
+    text-align: unset;
+  }
+}
+.storage--left {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  background-color: #fff;
+  color: hsl(229, 57%, 11%);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  bottom: 0;
+}
+.storage--left .small {
+  font-size: 14px;
+}
+.storage--left p {
+  display: flex;
+  gap: 10px;
+  flex-flow: row nowrap;
+  align-items: center;
+  color: hsl(229, 7%, 55%);
+  letter-spacing: 1px;
+}
+@media (min-width: 1028px) {
+  .storage--left {
+    bottom: unset;
+    left: unset;
+    top: 0;
+    right: 30px;
+    transform: translateY(-60%);
+    border-bottom-right-radius: 0;
+  }
+  .storage--left:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 1.5rem solid transparent;
+    border-top-color: #fff;
+    border-bottom: 0;
+    border-right: 0;
+    margin-left: -10.5px;
+    margin-bottom: calc(-1.5rem + 3px);
+  }
+}
+@media (min-width: 1028px) {
+  .storage {
+    width: 55dvw;
+  }
 }
 
 @keyframes slideout {

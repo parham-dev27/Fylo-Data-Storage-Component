@@ -20,6 +20,13 @@ body {
     place-content: center;
 }
 
+.bold {
+    font-weight: map-get(var.$font-weight, "bold");
+}
+.black {
+    color: var.$very-dark-blue;
+}
+
 main {
     display: flex;
     flex-flow: column nowrap;
@@ -35,6 +42,7 @@ main {
     width: 86dvw;
     @media (min-width: 1028px) {
         width: 35dvw;
+        max-width: 400px;
     }
     display: flex;
     flex-flow: column nowrap;
@@ -62,36 +70,111 @@ main {
         }
     }
 }
-
-.storage__progressbar--progressbar {
-    height: 1.5rem;
-    width: 100%;
-    background-color: var.$very-dark-blue;
-    border-radius: 1.5rem;
-    position: relative;
-    overflow: hidden;
-    &__bar {
-        display: block;
-        position: absolute;
-        top: 2px;
-        left: 0;
+.storage__progressbar {
+    &--progressbar {
+        height: 1.5rem;
+        width: 100%;
+        background-color: lighten(var.$very-dark-blue, 5);
         border-radius: 1.5rem;
-        height: calc(1.5rem - 4px);
-        width: 81.5%;
-        background: var.$gradient;
-        transform-origin: center left;
-        animation: slideout 1s ease-in-out;
-        &::after {
-            content: "";
+        position: relative;
+        overflow: hidden;
+        &__bar {
             display: block;
             position: absolute;
-            top: 2px;
-            right: 2px;
-            border-radius: 50%;
-            height: 1rem;
-            width: 1rem;
-            background-color: var.$pale-blue;
+            top: 3px;
+            left: 3px;
+            border-radius: 1.5rem;
+            height: calc(1.5rem - 6px);
+            width: 81.5%;
+            background: var.$gradient;
+            transform-origin: center left;
+            animation: slideout 1s ease-in-out;
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 2px;
+                right: 2px;
+                border-radius: 50%;
+                height: calc(1rem - 2px);
+                width: calc(1rem - 2px);
+                background-color: var.$pale-blue;
+            }
         }
+    }
+    &--hero {
+        display: flex;
+        flex-flow: row nowrap;
+        margin-top: 0.5rem;
+        & span:nth-child(1) {
+            margin-right: auto;
+        }
+    }
+    padding-bottom: 10px;
+}
+
+.storage {
+    padding: 2.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    background-color: var.$dark-blue;
+    position: relative;
+    justify-content: center;
+    &--text {
+        text-align: center;
+        @media (min-width: 1028px) {
+            text-align: unset;
+        }
+    }
+    &--left {
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        border-radius: 10px;
+        padding: 1rem 1.25rem;
+        background-color: #fff;
+        color: var.$very-dark-blue;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        bottom: 0;
+        .small {
+            font-size: var.$font-size;
+        }
+        p {
+            display: flex;
+            gap: 10px;
+            flex-flow: row nowrap;
+            align-items: center;
+            color: var.$gray-blue;
+            letter-spacing: 1px;
+        }
+        @media (min-width: 1028px) {
+            bottom: unset;
+            left: unset;
+            top: 0;
+            right: 30px;
+            transform: translateY(-60%);
+            border-bottom-right-radius: 0;
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 0;
+                height: 0;
+                border: 1.5rem solid transparent;
+                border-top-color: #fff;
+                border-bottom: 0;
+                border-right: 0;
+                margin-left: -10.5px;
+                margin-bottom: calc(-1.5rem + 3px);
+            }
+        }
+    }
+    @media (min-width: 1028px) {
+        width: 55dvw;
     }
 }
 
